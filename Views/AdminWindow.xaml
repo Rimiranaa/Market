@@ -1,0 +1,91 @@
+﻿<Window x:Class="Market.Views.AdminWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Market.Views"
+        mc:Ignorable="d"
+        Title="AdminWindow"  WindowStartupLocation="CenterScreen" MinHeight="600" MinWidth="1075"  MaxHeight="600" MaxWidth="1075" >
+    <Grid Background="#FFF273" Margin="0,0,0,-16">
+        <Button x:Name="ProductAndCategory" Click="Window_Click" Content="Товары и Категории" FontWeight="Bold" Background="Orange"  Margin="72,32,851,515">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Border MinWidth="200" MinHeight="200" Background="White" VerticalAlignment="Top" HorizontalAlignment="Left"  Padding="20" CornerRadius="20" Height="408" Width="517" Margin="70,90,0,0" >
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="30" Color="#A69A25" ShadowDepth="0"/>
+            </Border.Effect>
+            <ListView Name="Table">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="id" DisplayMemberBinding="{Binding Path=idOrder}"/>
+                        <GridViewColumn Header="Название товара" DisplayMemberBinding="{Binding Path=Product.nameProduct}"/>
+                        <GridViewColumn Header="Количество" DisplayMemberBinding="{Binding Path=quantity}"/>
+                        <GridViewColumn Header="Адрес" DisplayMemberBinding="{Binding Path=address}"/>
+                        <GridViewColumn Header="статус заказа" DisplayMemberBinding="{Binding Path=Status.nameStatus}"/>
+                        <GridViewColumn Header="ФИО заказчика" DisplayMemberBinding="{Binding Path=Client.FullName}"/>
+                        <GridViewColumn Header="Номер телефона" DisplayMemberBinding="{Binding Path=Client.Phone}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Border>
+
+
+
+        <Border MinWidth="200" MinHeight="200" Background="White" VerticalAlignment="Top" HorizontalAlignment="Left"  Padding="20" CornerRadius="20" Height="408" Width="387" Margin="625,90,0,0" >
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="30" Color="#A69A25" ShadowDepth="0"/>
+            </Border.Effect>
+            <ListView Name="Clients">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="id" DisplayMemberBinding="{Binding Path=idClient}"/>
+                        <GridViewColumn Header="ФИО заказчика" DisplayMemberBinding="{Binding Path=FullName}"/>
+                        <GridViewColumn Header="Номер телефона" DisplayMemberBinding="{Binding Path=Phone}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Border>
+
+        <Button Click="Client_Click" Content="Редактор клиентов" FontWeight="Bold" Background="Orange"  Margin="842,519,63,31">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <Button x:Name="AddClient" Click="AddClient_Click" Content="Добавить клиента" FontWeight="Bold" Background="White"  Margin="625,519,296,31">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <Button x:Name="Edit" Click="Edit_Click" Content="Редактор заказов" FontWeight="Bold" Background="Orange"  Margin="70,519,851,31">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="Add" Click="AddOrder_Click" Content="Добавить заказ" FontWeight="Bold" Background="White"  Margin="252,519,669,31">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="Back" Click="Back_Click" Content="Выйти" FontWeight="Bold" Background="Orange"  Margin="460,519,505,31">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+    </Grid>
+</Window>

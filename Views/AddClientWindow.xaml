@@ -1,0 +1,38 @@
+﻿<Window x:Class="Market.Views.AddClientWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Market.Views"
+        mc:Ignorable="d"
+        Title="AddClientWindow" SizeToContent="WidthAndHeight"  WindowStartupLocation="CenterScreen" Height="284" Width="375">
+    <Grid Background="#FFF273">
+        <Border MinWidth="20" MinHeight="20" Background="White" VerticalAlignment="Center" HorizontalAlignment="Center"  Padding="20" CornerRadius="20" Height="248" Width="355">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="30" Color="#A69A25" ShadowDepth="0"/>
+            </Border.Effect>
+        </Border>
+
+
+        <TextBlock Margin="25,15,229,238">ФИО заказчика:</TextBlock>
+        <TextBox  Name="FullNameBox" MinWidth="25" Margin="25,36,25,215"/>
+        <TextBlock Margin="25,53,176,197">Номер телефона:</TextBlock>
+        <TextBox  Name="PhoneBox" MinWidth="25" Margin="25,71,25,179"/>
+
+        <WrapPanel Grid.Row="2" HorizontalAlignment="Right" Margin="0,15,0,0"/>
+        <Button FontWeight="Bold" Background="White" IsDefault="True" Click="Accept_Click" MinWidth="60" Margin="25,214,258,31" Content="Сохранить" RenderTransformOrigin="0.5,0.5">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button FontWeight="Bold" Background="White" IsDefault="True" Click="Back_Click" MinWidth="60" Margin="258,214,25,31" Content="Назад" RenderTransformOrigin="0.5,0.5">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+    </Grid>
+</Window>
